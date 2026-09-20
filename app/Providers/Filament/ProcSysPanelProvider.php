@@ -7,6 +7,7 @@ use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
+use Filament\Navigation\NavigationGroup;
 use Filament\Pages\Dashboard;
 use Filament\Panel;
 use Filament\PanelProvider;
@@ -59,6 +60,23 @@ class ProcSysPanelProvider extends PanelProvider
             ])
             ->plugins([
                 FilamentShieldPlugin::make()
+            ])
+            ->navigationGroups([
+                NavigationGroup::make()
+                    ->label('Procurement')
+                    ->collapsible(true),
+
+                NavigationGroup::make()
+                    ->label('Master Data')
+                    ->collapsible(true),
+
+                NavigationGroup::make()
+                    ->label('Supplier Management')
+                    ->collapsible(true),
+
+                NavigationGroup::make()
+                    ->label('Filament Shield')
+                    ->collapsible(true)
             ]);
     }
 }
